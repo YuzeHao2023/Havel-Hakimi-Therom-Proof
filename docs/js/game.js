@@ -287,7 +287,22 @@ function restart() {
       if (win === 0) {
         showSuccessMessage();
         setTimeout(function() {
-          if (confirm("恭喜！你完成了这个谜题。\n\n要试试更难的吗？")) {
+          var lang = typeof window.getCurrentLanguage === 'function' ? window.getCurrentLanguage() : 'cn';
+          var message, confirmText;
+          
+          if (lang === 'en') {
+            message = "Congratulations! You completed this puzzle.\n\nWould you like to try a harder one?";
+            confirmText = true;
+          } else {
+            message = "恭喜！你完成了这个谜题。\n\n要试试更难的吗？";
+            confirmText = confirm(message);
+          }
+          
+          if (lang === 'en') {
+            confirmText = confirm(message);
+          }
+          
+          if (confirmText) {
             nodes = initNodes(++numNodes);
             links = resetLinks();
             force = initForce();
@@ -357,7 +372,13 @@ function keyup() {
 
 function showSuccessMessage() {
   var statusEl = document.getElementById('game-status');
-  statusEl.textContent = '🎉 太棒了！你成功构造了满足度序列的图！';
+  var lang = typeof window.getCurrentLanguage === 'function' ? window.getCurrentLanguage() : 'cn';
+  
+  if (lang === 'en') {
+    statusEl.textContent = '🎉 Congratulations! You successfully constructed the graph matching the degree sequence!';
+  } else {
+    statusEl.textContent = '🎉 太棒了！你成功构造了满足度序列的图！';
+  }
   statusEl.classList.add('success');
 }
 
