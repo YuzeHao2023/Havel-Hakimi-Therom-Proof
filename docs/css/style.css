@@ -64,6 +64,36 @@ body {
     color: #3498db;
 }
 
+/* Language Switcher */
+.language-switcher {
+    display: flex;
+    gap: 8px;
+    margin-left: 30px;
+}
+
+.lang-btn {
+    background-color: #f0f0f0;
+    border: 2px solid #ddd;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    color: #555;
+    transition: all 0.3s ease;
+}
+
+.lang-btn:hover {
+    background-color: #e8e8e8;
+    border-color: #999;
+}
+
+.lang-btn.active {
+    background-color: #3498db;
+    border-color: #3498db;
+    color: white;
+}
+
 @media (max-width: 768px) {
     .nav-menu {
         gap: 15px;
@@ -340,9 +370,27 @@ text.degree {
         font-size: 18px;
     }
 
+    .navbar .container {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
     .nav-menu {
         gap: 10px;
         font-size: 13px;
+        order: 3;
+        flex-basis: 100%;
+    }
+
+    .language-switcher {
+        margin-left: 0;
+        margin-top: 10px;
+        order: 2;
+    }
+
+    .lang-btn {
+        padding: 5px 10px;
+        font-size: 12px;
     }
 
     pre {
