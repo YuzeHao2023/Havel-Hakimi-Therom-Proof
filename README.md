@@ -126,3 +126,62 @@ python examples/konigsberg.py
 ```
 
 It will print the degree sequence and the result of the test.
+
+## GitHub Pages Demo 🎮
+
+A comprehensive interactive demo website has been created and is deployed via GitHub Pages!
+
+### Access the Demo
+
+Visit: **https://YuzeHao2023.github.io/Havel-Hakimi-Therom-Proof/**
+
+The demo includes:
+
+1. **Complete Explanation** - Detailed explanation of the Havel-Hakimi theorem
+2. **Formal Definition** - Mathematical definitions and the Havel-Hakimi procedure
+3. **Theorem Statement** - The complete statement of the theorem
+4. **Full Proof** - Step-by-step proof of both directions (sufficiency and necessity)
+5. **Algorithm Guide** - Algorithm explanation with complexity analysis
+6. **Interactive Game** - A fun, interactive graph construction game where you build graphs matching given degree sequences
+7. **Examples** - Worked examples and applications in various fields
+
+### Game Instructions
+
+In the interactive game:
+- The system generates a random graphical degree sequence
+- Each node displays the number of edges it still needs
+- Drag from one node to another to add an edge
+- Selected edges can be deleted by pressing the Delete or Backspace key
+- Complete the puzzle when all nodes have their target degrees!
+
+### Demo Website Structure
+
+```
+docs/
+├── index.html          # Main demo page with theorem explanation, proof, and game
+├── css/
+│   └── style.css       # Responsive design stylesheets
+├── js/
+│   └── game.js         # Interactive game logic using D3.js
+├── img/                # Image resources
+└── README.md           # Deployment instructions
+```
+
+### How to Deploy
+
+If you fork this repository and want to enable GitHub Pages:
+
+1. Go to Settings → Pages
+2. Select "Deploy from a branch"
+3. Choose branch: `main` (or your default branch)
+4. Choose folder: `/docs`
+5. Save and wait for deployment
+
+Your site will be available at: `https://<your-username>.github.io/Havel-Hakimi-Therom-Proof/`
+
+### Technologies Used
+
+- **HTML5** & **CSS3** for structure and styling
+- **D3.js** for graph visualization and interaction
+- **MathJax** for mathematical formula rendering
+- **Vanilla JavaScript** for game logic
